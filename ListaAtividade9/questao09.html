@@ -1,0 +1,67 @@
+<!-- 9 - Crie um formulário com os campos para cadastrar 
+    o usuário de um sistema (login, senha e confirmar senha). 
+    Permita que a página seja submetida apenas se todos os 
+    campos estiverem preenchidos, se os campos senha e confirma 
+    senha forem iguais e a senha possuir entre 6 e 10 caracteres.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 9</title>
+
+    <script>
+
+        function verificaFormulario(event) {
+            event.preventDefault();
+
+            var form = document.getElementById('form-cadastro');
+            var campoLogin = document.getElementById('campoLogin');
+            var campoSenha = document.getElementById('campoSenha');
+            var campoConfirmarSenha = document.getElementById('campoConfirmarSenha');
+
+            if (campoLogin.value != "" && campoSenha.value != "" && campoConfirmarSenha.value != "") {
+
+                if (campoSenha.value.length >= 6 && campoSenha.value.length <= 10
+                    && campoConfirmarSenha.value.length >= 6
+                    && campoConfirmarSenha.value.length <= 10) {
+                    
+                    if (campoSenha.value === campoConfirmarSenha.value) {
+                        alert("Cadastro concluído!");
+                        form.reset();
+                    }
+                    else {
+                        alert('As senhas são diferentes!');
+                    }
+                } 
+                else {
+                    alert('A senha deve ter entre 6 e 10 caracteres!')
+                }
+            }
+            else {
+                alert("Contém campos vazios!");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form id="form-cadastro">
+        <label for="campoLogin">Login:</label>
+        <input type="text" id="campoLogin" name="login"><br><br>
+
+        <label for="campoSenha">Senha:</label>
+        <input type="password" id="campoSenha" name="senha"><br><br>
+
+        <label for="campoConfirmarSenha">Confirme sua senha:</label>
+        <input type="password" id="campoConfirmarSenha" name="confirma-senha"><br><br>
+
+        <button type="submit" id="botaoCadastrar" onclick="verificaFormulario(event)">Cadastrar</button>
+    </form>
+</body>
+
+</html>

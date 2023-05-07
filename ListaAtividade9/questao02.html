@@ -1,0 +1,44 @@
+<!-- 2 - Crie uma página com 4 links (tag <a>), cada um representando o nome 
+    de uma cor, que, utilizando o evento onmouseover altere a cor do plano 
+    de fundo para cor correspondente.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 2</title>
+
+    <script>
+        function mudarCorBackground(opcao) {
+            switch (opcao) {
+                case 1:
+                    document.body.style.backgroundColor = "red";
+                    break;
+                case 2:
+                    document.body.style.backgroundColor = "green";
+                    break;
+                case 3:
+                    document.body.style.backgroundColor = "blue";
+                    break;
+                case 4:
+                    document.body.style.backgroundColor = "yellow";
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <a id="link1" onmouseover="mudarCorBackground(1)">Vermelho</a>
+    <a id="link2" onmouseover="mudarCorBackground(2)">Verde</a>
+    <a id="link3" onmouseover="mudarCorBackground(3)">Azul</a>
+    <a id="link4" onmouseover="mudarCorBackground(4)">Amarelo</a>
+</body>
+
+</html>

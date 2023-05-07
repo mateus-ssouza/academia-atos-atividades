@@ -1,0 +1,101 @@
+<!-- 6 – Crie um parágrafo com um texto como conteúdo. 
+    Crie 4 botões. Dois para trocar a cor da fonte, 
+    de branco para preto e vice-versa e outros dois 
+    para fazer o mesmo com o fundo do parágrafo. 
+    Use divs se julgar necessário.
+-->
+
+<!-- 7 – Crie um botão + (mais) e outro – (menos) na 
+    página do exercício anterior. Esses botões aumentam e 
+    diminuem o tamanho da fonte, respectivamente.
+-->
+
+<!-- 
+    8 – Ainda continuando no exercício 6, faça um botão que 
+    transforme todo o texto do parágrafo em maiúscula, e 
+    outro em minúscula.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 6, 7 e 8</title>
+
+    <script>
+
+        function mudaCorElementos(opc) {
+            var texto = document.getElementById("texto");
+
+            switch (opc) {
+                case 1:
+                    var fonteBranca = document.getElementById("fonteBranca");
+                    texto.style.color = "white";
+                    break;
+                case 2:
+                    var fontePreta = document.getElementById("fontePreta");
+                    texto.style.color = "black";
+                    break;
+                case 3:
+                    var fundoBranco = document.getElementById("fundoBranco");
+                    texto.style.backgroundColor = "white";
+                    break;
+                case 4:
+                    var fundoPreto = document.getElementById("fundoPreto");
+                    texto.style.backgroundColor = "black";
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function aumentar() {
+            var texto = document.getElementById('texto');
+            var tamanhoFonte = window.getComputedStyle(texto).getPropertyValue('font-size');
+            var novoTamanhoFonte = parseInt(tamanhoFonte) + 1;
+            texto.style.fontSize = `${novoTamanhoFonte}px`;
+        }
+
+        function diminuir() {
+            var texto = document.getElementById('texto');
+            var tamanhoFonte = window.getComputedStyle(texto).getPropertyValue('font-size');
+            var novoTamanhoFonte = parseInt(tamanhoFonte) - 1;
+            texto.style.fontSize = `${novoTamanhoFonte}px`;
+        }
+
+        function textoMaiusculas() {
+            let texto = document.getElementById("texto");
+            texto.innerHTML = texto.innerHTML.toUpperCase();
+        }
+
+        function textoMinusculas() {
+            let texto = document.getElementById("texto");
+            texto.innerHTML = texto.innerHTML.toLowerCase();
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <p id="texto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+
+    <button id="fonteBranca" onclick="mudaCorElementos(1)">Fonte Branca</button>
+    <button id="fontePreta" onclick="mudaCorElementos(2)">Fonte Preta</button>
+    <button id="fundoBranco" onclick="mudaCorElementos(3)">Fundo Branco</button>
+    <button id="fundoPreto" onclick="mudaCorElementos(4)">Fundo Preto</button>
+
+    <br><br>
+
+    <button id="aumentar" onclick="aumentar()">+</button>
+    <button id="diminuir" onclick="diminuir()">-</button>
+
+    <br><br>
+
+    <button id="maiusculo" onclick="textoMaiusculas()">Maiúsculo</button>
+    <button id="minuscula" onclick="textoMinusculas()">Minúscula</button>
+</body>
+
+</html>

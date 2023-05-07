@@ -1,0 +1,51 @@
+<!-- 4 – Crie um parágrafo (<p>) com um texto como conteúdo. 
+    Adicione um botão que, ao ser clicado, oculte ou mostre o
+    texto do parágrafo.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 4</title>
+
+    <script>
+        function ocultarParagrafo() {
+            var texto = document.getElementById("texto");
+            var botao = document.getElementById("botao");
+
+            if (texto.style.display === "none") {
+                texto.style.display = "block";
+                botao.textContent = "Ocultar Texto";;
+            }
+            else {
+                texto.style.display = "none";
+                botao.textContent = "Mostrar texto";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p id="texto">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Fuga tempora doloribus tempore quo voluptatem eos,
+        commodi quam, accusantium, magni perferendis corrupti
+        recusandae? Ab quam vitae doloribus placeat rerum temporibus eos.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Fuga tempora doloribus tempore quo voluptatem eos,
+        commodi quam, accusantium, magni perferendis corrupti
+        recusandae? Ab quam vitae doloribus placeat rerum temporibus eos.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Fuga tempora doloribus tempore quo voluptatem eos,
+        commodi quam, accusantium, magni perferendis corrupti
+        recusandae? Ab quam vitae doloribus placeat rerum temporibus eos.
+    </p>
+
+    <button id="botao" onclick="ocultarParagrafo()">Ocultar texto</button>
+</body>
+
+</html>
